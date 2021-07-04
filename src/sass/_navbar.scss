@@ -1,48 +1,115 @@
-// Search Input Group
+@import "variable";
+@import "mixins";
+// Middle Navbar
 
-.search-input-group {
-  width: 850px;
-  height: 50px;
-  background: #F6F7FB;
-  border-radius: 45px;
+.middle-navbar {
+  // logo
+  .app-logo {
+    width: 115px;
+  }
 
-  .search-input {
-    width: calc(100% - 75px);
-    border: 0;
-    background: #F6F7FB;
+  // Search Input Group
+  .input-group-wrapper {
+    width: calc(100% - 275px);
+    height: 50px;
+    margin-right: 0.625rem;
+    margin-left: 0.625rem;
 
-    &:focus-visible {
-      outline: none;
+    .search-input-group {
+      height: 100%;
+      width: 100%;
+      background: #F6F7FB;
+      border-radius: 45px;
+      color: $text-grey;
+
+
+      .search-input {
+        width: calc(100% - 75px);
+        border: 0;
+        background: #F6F7FB;
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+
+      .search-icon {
+        margin: auto 1.25rem;
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    @media all and (max-width: 767px) {
+      display: none;
     }
   }
 
-  .search-image {
-    height: 16px;
-    width: 16px;
-    margin: auto 20px;
-  }
-}
+  // Navbar Right Button
 
-@media all and (max-width: 768px) {
-  .search-input-group {
-    width: 100%;
-  }
-}
+  .navbar-right-buttons {
+    width: 140px;
 
-// Navbar Right Button
-
-.navbar-right-buttons {
-  width: 141px;
-
-  .action-btn {
-    border: none;
-    background: none;
-  }
-
-  @media all and (max-width: 768px) {
-    width: 100%;
     .action-btn {
-      margin: 0 10px;
+      border: none;
+      background: none;
+      height: 24px;
+      width: 24px;
+      padding: 0;
+
+      svg {
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 767px) {
+  .visible-md-search {
+    position: relative;
+
+    .input-group-wrapper {
+      position: absolute;
+      top: 100%;
+      display: block;
+      width: 90%;
+      animation: search-input-animation;
+      animation-duration: 2s;
+
+      .search-input-group {
+        border: 2px solid $text-grey;
+
+        .search-input {
+          width: calc(100% - 79px);
+        }
+      }
+    }
+  }
+}
+
+// Bottom Navbar
+.bottom-navbar {
+  height: 60px;
+  background: #F6F7FB;
+  .sidebar-btn {
+    @include poppins;
+    height: 60px;
+    background: $primary;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px 10px 0 0;
+    border: none;
+    width: 100%;
+    padding: 1.125rem 1.875rem;
+    .sidebar-btn-text {
+      margin-left: 1.75rem;
+    }
+
+
+    @media all and (max-width: 767px) {
+      width: 300px;
+      border-radius: 0;
     }
   }
 }

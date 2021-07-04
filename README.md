@@ -10,6 +10,11 @@ npm install
 npm run serve
 ```
 
+### Compiles SCSS
+```
+npm run style
+```
+
 ### Compiles and minifies for production
 ```
 npm run build

@@ -1,8 +1,6 @@
 export default {
     data() {
-        return {
-
-        }
+        return {}
     },
     mounted() {
         this.$nextTick(() => {
@@ -13,7 +11,7 @@ export default {
         initFeather() {
             const feather = require('feather-icons');
             feather.replace();
-            window.addEventListener('resize', ()=> {
+            window.addEventListener('resize', () => {
                 const feather = require('feather-icons');
                 feather.replace();
             })

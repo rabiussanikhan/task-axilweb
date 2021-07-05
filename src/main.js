@@ -3,7 +3,7 @@ import App from './App.vue'
 import './components/components'
 import 'bootstrap'
 import jQuery from 'jquery'
-window.$ = jQuery
+window.$ = jQuery;
 
 Vue.prototype.$hub = new Vue();
 

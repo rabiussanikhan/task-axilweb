@@ -12487,24 +12487,94 @@
   height: 60px;
   background: #F6F7FB;
 }
-.bottom-navbar .sidebar-btn {
+.bottom-navbar .left-sidebar {
+  position: relative;
+}
+.bottom-navbar .left-sidebar .sidebar-btn {
   font-family: "Poppins", sans-serif;
   height: 60px;
   background: #5956E9;
   color: white;
-  font-size: 16px;
   border-radius: 10px 10px 0 0;
   border: none;
   width: 100%;
   padding: 1.125rem 1.875rem;
 }
-.bottom-navbar .sidebar-btn .sidebar-btn-text {
+.bottom-navbar .left-sidebar .sidebar-btn .sidebar-btn-text {
   margin-left: 1.75rem;
 }
-@media all and (max-width: 767px) {
-  .bottom-navbar .sidebar-btn {
-    width: 300px;
+@media all and (max-width: 575px) {
+  .bottom-navbar .left-sidebar .sidebar-btn {
+    width: 100%;
     border-radius: 0;
+  }
+}
+.bottom-navbar .left-sidebar .left-sidebar-list {
+  position: absolute;
+  width: calc(100% - 24px);
+}
+.bottom-navbar .left-sidebar .left-sidebar-list .list-group-item {
+  padding: 1.125rem 1.875rem;
+  color: #656973;
+}
+.bottom-navbar .right-sidebar .nav {
+  justify-content: end;
+}
+.bottom-navbar .right-sidebar .nav .nav-item .nav-link {
+  color: #999FAE;
+}
+.bottom-navbar .right-sidebar .nav .nav-item .nav-with-submenu .sub-item {
+  display: none;
+}
+.bottom-navbar .right-sidebar .nav .nav-item .nav-with-submenu:hover {
+  position: relative;
+  color: black;
+  /*.sub-item {
+    display: block;
+    position: absolute;
+    color: $text-grey;
+    background: #F6F7FB;
+    padding: 0.625rem;
+    width: 200px;
+    right: 0;
+    top: 50px;
+  }*/
+}
+.bottom-navbar .right-sidebar .nav .nav-item .nav-with-submenu:hover .nav-link-text {
+  border-bottom: 3px solid #5956E9;
+}
+.bottom-navbar .right-sidebar .sidebar-btn {
+  display: none;
+}
+@media all and (max-width: 991px) {
+  .bottom-navbar .right-sidebar .nav {
+    display: none;
+  }
+  .bottom-navbar .right-sidebar .sidebar-btn {
+    display: block;
+    height: 60px;
+    background: #5956E9;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px 10px 0 0;
+    border: none;
+    padding: 1.125rem 1.875rem;
+  }
+}
+@media all and (max-width: 991px) and (max-width: 575px) {
+  .bottom-navbar .right-sidebar .sidebar-btn {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+@media all and (max-width: 575px) {
+  .left-sidebar {
+    width: 70%;
+  }
+
+  .right-sidebar {
+    width: 30%;
   }
 }
 

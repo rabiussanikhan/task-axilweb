@@ -2,6 +2,7 @@
     <div id="app">
         <app-navbar/>
         <app-main/>
+        <app-products/>
     </div>
 </template>
 

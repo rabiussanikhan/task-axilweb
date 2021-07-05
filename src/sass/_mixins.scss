@@ -1,3 +1,7 @@
 @mixin poppins {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+@mixin shadows-into-light {
+  font-family: 'Shadows Into Light', cursive !important;
 }

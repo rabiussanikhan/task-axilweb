@@ -96,7 +96,6 @@
   .left-sidebar {
 
     .sidebar-btn {
-      @include poppins;
       height: 60px;
       background: $primary;
       color: white;
@@ -106,6 +105,7 @@
       padding: 1.125rem 1.875rem;
 
       .sidebar-btn-text {
+        @include poppins;
         margin-left: 1.75rem;
       }
 
@@ -122,7 +122,7 @@
       border-radius: 0 0 10px 10px;
 
       .list-group-item {
-        padding: 1.125rem 1.875rem;
+        padding: 1.055rem 1.875rem;
         color: #656973;
         border: none;
       }

@@ -1,0 +1,50 @@
+@import "variable";
+@import "mixins";
+
+.products-content {
+  .header {
+    @include shadows-into-light;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 99.33%;
+    letter-spacing: -0.025em;
+    color: #E76458;
+  }
+
+  .header-secondary {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: -0.045em;
+    color: #292930;
+  }
+
+  .slider-btn-group {
+    width: 110px;
+    @media all and (max-width: 767px) {
+      width: 100%;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .slider-btn {
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+      border: none;
+      margin: 0;
+      padding: 0;
+      color: $dark;
+      background: $default-bg;
+      box-shadow: none;
+
+      &:hover {
+        background: white;
+        color: $primary;
+        box-shadow: 0 0 30px #E5E5E5;
+      }
+    }
+  }
+}

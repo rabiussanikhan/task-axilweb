@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
 * {
   font-family: "DM Sans", sans-serif;
   font-weight: 500;
@@ -12492,7 +12493,6 @@
   background: #F6F7FB;
 }
 .bottom-navbar .left-sidebar .sidebar-btn {
-  font-family: "Poppins", sans-serif;
   height: 60px;
   background: #5956E9;
   color: white;
@@ -12502,6 +12502,7 @@
   padding: 1.125rem 1.875rem;
 }
 .bottom-navbar .left-sidebar .sidebar-btn .sidebar-btn-text {
+  font-family: "Poppins", sans-serif !important;
   margin-left: 1.75rem;
 }
 @media all and (max-width: 575px) {
@@ -12517,7 +12518,7 @@
   border-radius: 0 0 10px 10px;
 }
 .bottom-navbar .left-sidebar .left-sidebar-list .list-group-item {
-  padding: 1.125rem 1.875rem;
+  padding: 1.055rem 1.875rem;
   color: #656973;
   border: none;
 }
@@ -12684,6 +12685,50 @@
   line-height: 100%;
   letter-spacing: -0.045em;
   color: white;
+}
+
+.products-content .header {
+  font-family: "Shadows Into Light", cursive !important;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 99.33%;
+  letter-spacing: -0.025em;
+  color: #E76458;
+}
+.products-content .header-secondary {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: -0.045em;
+  color: #292930;
+}
+.products-content .slider-btn-group {
+  width: 110px;
+}
+@media all and (max-width: 767px) {
+  .products-content .slider-btn-group {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+.products-content .slider-btn-group .slider-btn {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: #27272E;
+  background: #F6F7FB;
+  box-shadow: none;
+}
+.products-content .slider-btn-group .slider-btn:hover {
+  background: white;
+  color: #5956E9;
+  box-shadow: 0 0 30px #E5E5E5;
 }
 
 /*# sourceMappingURL=app.css.map */

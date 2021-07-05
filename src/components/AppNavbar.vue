@@ -77,7 +77,7 @@
                                         class="list-group-item d-flex align-items-center justify-content-between">
                                         <span>{{ item.title }}</span>
                                         <img class="list-group-img"
-                                             :src="imagePath(item.icon)"
+                                             :src="urlGenerator(item.icon)"
                                              :alt="item.icon"
                                         />
                                     </li>
@@ -142,51 +142,51 @@ export default {
             leftSidebarData: [
                 {
                     title: 'Fashion',
-                    icon: 'briefcase'
+                    icon: 'images/icons/briefcase.png'
                 },
                 {
                     title: 'Flower Pot',
-                    icon: 'cactus-light'
+                    icon: 'images/icons/cactus-light.png'
                 },
                 {
                     title: 'CCTV',
-                    icon: 'camera'
+                    icon: 'images/icons/camera.png'
                 },
                 {
                     title: 'Music',
-                    icon: 'loudspeaker'
+                    icon: 'images/icons/loudspeaker.png'
                 },
                 {
                     title: 'Photography',
-                    icon: 'camera-light'
+                    icon: 'images/icons/camera-light.png'
                 },
                 {
                     title: 'Furniture',
-                    icon: 'home-light'
+                    icon: 'images/icons/home-light.png'
                 },
                 {
                     title: 'Health',
-                    icon: 'graph'
+                    icon: 'images/icons/graph.png'
                 },
                 {
                     title: 'Photography',
-                    icon: 'camera-light'
+                    icon: 'images/icons/camera-light.png'
                 },
                 {
                     title: 'Health',
-                    icon: 'wallet'
+                    icon: 'images/icons/wallet.png'
                 },
                 {
                     title: 'Furniture',
-                    icon: 'home-light'
+                    icon: 'images/icons/home-light.png'
                 },
                 {
                     title: 'Fashion',
-                    icon: 'briefcase'
+                    icon: 'images/icons/briefcase.png'
                 },
                 {
                     title: 'Flower Pot',
-                    icon: 'cactus-light'
+                    icon: 'images/icons/cactus-light.png'
                 },
             ],
             rightSidebarData: [
@@ -216,11 +216,6 @@ export default {
             handler: function (width) {
                 this.leftSidebarCanvasButton = width < 992
             }
-        }
-    },
-    methods: {
-        imagePath(name) {
-            return urlGenerator(`images/icons/${name}.png`);
         }
     }
 }

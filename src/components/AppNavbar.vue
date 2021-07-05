@@ -53,8 +53,10 @@
                                  id="sidebarLeftOffcanvas"
                                  aria-labelledby="sidebarLeftOffcanvasLabel">
                                 <div class="offcanvas-header">
-                                    <h5 class="offcanvas-title" id="sidebarLeftOffcanvasLabel">Backdroped with scrolling</h5>
-                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    <h5 class="offcanvas-title" id="sidebarLeftOffcanvasLabel">Backdroped with
+                                        scrolling</h5>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
                                 </div>
                                 <div class="offcanvas-body">
                                     <p>Try scrolling the rest of the page to see this option in action.</p>
@@ -69,23 +71,29 @@
                                 <span class="sidebar-btn-text">Department</span>
                             </button>
                             <ul class="list-group left-sidebar-list">
-                                <li v-for="(item, index) in leftSidebarData"
-                                    :key="index"
-                                    class="list-group-item d-flex align-items-center justify-content-between">
-                                    <span>{{item.title}}</span>
-                                    <img class="list-group-img"
-                                         :src="imagePath(item.icon)"
-                                         :alt="item.icon"
+                                <template v-for="(item, index) in leftSidebarData">
+                                    <li :key="index"
+                                        class="list-group-item d-flex align-items-center justify-content-between">
+                                        <span>{{ item.title }}</span>
+                                        <img class="list-group-img"
+                                             :src="imagePath(item.icon)"
+                                             :alt="item.icon"
+                                        />
+                                    </li>
+                                    <hr v-if="index < (leftSidebarData.length - 1)"
+                                        class="list-item-divider"
+                                        :key="index"
                                     />
-                                </li>
+                                </template>
                             </ul>
                         </template>
                     </div>
                     <div class="right-sidebar col-sm-4 col-md-8 col-lg-9 d-flex align-items-center justify-content-end">
                         <ul class="nav">
-                            <li v-for="(item, index) in rightSidebarData" :key="index"  class="nav-item">
-                                <a class="nav-link active" :class="{'nav-with-submenu': item.subMenu}" aria-current="page" href="#">
-                                    <span class="nav-link-text">{{item.title}}</span>
+                            <li v-for="(item, index) in rightSidebarData" :key="index" class="nav-item">
+                                <a class="nav-link active" :class="{'nav-with-submenu': item.subMenu}"
+                                   aria-current="page" href="#">
+                                    <span class="nav-link-text">{{ item.title }}</span>
                                     <i data-feather="chevron-down" v-if="item.subMenu"></i>
                                 </a>
                             </li>
@@ -103,8 +111,10 @@
                              id="sidebarRightOffcanvas"
                              aria-labelledby="sidebarRightOffcanvasLabel">
                             <div class="offcanvas-header">
-                                <h5 class="offcanvas-title" id="sidebarRightOffcanvasLabel">Backdroped with scrolling</h5>
-                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                <h5 class="offcanvas-title" id="sidebarRightOffcanvasLabel">Backdroped with
+                                    scrolling</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
                             </div>
                             <div class="offcanvas-body">
                                 <p>Try scrolling the rest of the page to see this option in action.</p>
@@ -180,9 +190,9 @@ export default {
                 },
             ],
             rightSidebarData: [
-                { title: 'New Release' },
-                { title: 'Men' },
-                { title: 'Women' },
+                {title: 'New Release'},
+                {title: 'Men'},
+                {title: 'Women'},
                 {
                     title: 'Kids',
                     subMenu: [
@@ -190,8 +200,8 @@ export default {
                         {title: 'Shirt'}
                     ]
                 },
-                { title: 'Sale' },
-                { title: 'Collections' },
+                {title: 'Sale'},
+                {title: 'Collections'},
             ],
         }
     },

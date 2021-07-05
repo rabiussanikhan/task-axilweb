@@ -119,10 +119,19 @@
     .left-sidebar-list {
       position: absolute;
       width: calc(100% - 24px);
+      box-shadow: 0 30px 32px #F6F7FB;
+      border-radius: 0 0 10px 10px;
 
       .list-group-item {
         padding: 1.125rem 1.875rem;
         color: #656973;
+        border: none;
+      }
+      .list-item-divider {
+        margin: 0 1.875rem;;
+        padding: 0;
+        background: #CBD3D9;
+        height: 1px;
       }
     }
   }

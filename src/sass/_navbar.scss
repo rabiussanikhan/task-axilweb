@@ -18,7 +18,7 @@
     .search-input-group {
       height: 100%;
       width: 100%;
-      background: #F6F7FB;
+      background: $default-bg;
       border-radius: 45px;
       color: $text-grey;
 
@@ -26,7 +26,7 @@
       .search-input {
         width: calc(100% - 75px);
         border: 0;
-        background: #F6F7FB;
+        background: $default-bg;
 
         &:focus-visible {
           outline: none;
@@ -73,7 +73,7 @@
       position: absolute;
       top: 100%;
       display: block;
-      width: 90%;
+      width: 92%;
       animation: search-input-animation;
       animation-duration: 2s;
 
@@ -91,10 +91,9 @@
 // Bottom Navbar
 .bottom-navbar {
   height: 60px;
-  background: #F6F7FB;
+  background: $default-bg;
 
   .left-sidebar {
-    position: relative;
 
     .sidebar-btn {
       @include poppins;
@@ -119,7 +118,7 @@
     .left-sidebar-list {
       position: absolute;
       width: calc(100% - 24px);
-      box-shadow: 0 30px 32px #F6F7FB;
+      box-shadow: 0 30px 32px $default-bg;
       border-radius: 0 0 10px 10px;
 
       .list-group-item {
@@ -128,7 +127,7 @@
         border: none;
       }
       .list-item-divider {
-        margin: 0 1.875rem;;
+        margin: 0 1.875rem;
         padding: 0;
         background: #CBD3D9;
         height: 1px;
@@ -152,13 +151,13 @@
 
           &:hover {
             position: relative;
-            color: black;
+            color: $dark;
 
             /*.sub-item {
               display: block;
               position: absolute;
               color: $text-grey;
-              background: #F6F7FB;
+              background: $default-bg;
               padding: 0.625rem;
               width: 200px;
               right: 0;

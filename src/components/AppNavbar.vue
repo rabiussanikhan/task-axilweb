@@ -37,7 +37,8 @@
         <div class="bottom-navbar">
             <div class="container">
                 <div class="row">
-                    <div class="left-sidebar col-sm-8 col-md-4 col-lg-3">
+                    <div class="left-sidebar col-sm-8 col-md-4 col-lg-3"
+                         :class="{'position-relative':!leftSidebarCanvasButton}">
                         <template v-if="leftSidebarCanvasButton">
                             <button type="button"
                                     :key="`canvas`"
@@ -72,7 +73,7 @@
                             </button>
                             <ul class="list-group left-sidebar-list">
                                 <template v-for="(item, index) in leftSidebarData">
-                                    <li :key="index"
+                                    <li :key="`list-${index}`"
                                         class="list-group-item d-flex align-items-center justify-content-between">
                                         <span>{{ item.title }}</span>
                                         <img class="list-group-img"
@@ -80,10 +81,9 @@
                                              :alt="item.icon"
                                         />
                                     </li>
-                                    <hr v-if="index < (leftSidebarData.length - 1)"
+                                    <div v-if="index < (leftSidebarData.length - 1)"
                                         class="list-item-divider"
-                                        :key="index"
-                                    />
+                                        :key="`hr-${index}`"></div>
                                 </template>
                             </ul>
                         </template>

@@ -2,7 +2,6 @@
     <div id="app">
         <app-navbar/>
         <app-main/>
-        <a href="https://bestwebcreator.com/shopwise/demo/index-2.html" target="_blank">Demo</a>
     </div>
 </template>
 

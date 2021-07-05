@@ -1,3 +1,8 @@
+@import "variable";
+.default-bg {
+  background-color: $default-bg;
+}
+
 
 @for $i from 1 through 100 {
   .font-size-#{$i} {
@@ -6,7 +11,7 @@
   .margin-#{$i} {
     margin: #{$i}px !important;
   }
-  .margin-top#{$i} {
+  .margin-top-#{$i} {
     margin-top: #{$i}px !important;
   }
   .margin-left-#{$i} {

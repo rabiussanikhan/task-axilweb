@@ -1,5 +1,6 @@
 @import "variable";
 @import "mixins";
+@import "animation";
 // Middle Navbar
 
 .middle-navbar {
@@ -125,6 +126,49 @@
         padding: 1.055rem 1.875rem;
         color: #656973;
         border: none;
+        cursor: pointer;
+        position: relative;
+        /*.list-item-name {
+          font-size: 20px;
+        }*/
+
+        .burger-menu-wrapper {
+          position: absolute;
+          left: 100%;
+          top: 0;
+          height: 620px;
+          background: none;
+          display: none;
+
+          @media all and (min-width: 992px){
+            width: 720px;
+          }
+          @media all and (min-width: 1200px){
+            width: 854px;
+          }
+          @media all and (min-width: 1400px){
+            width: 990px;
+          }
+
+          .burger-menu {
+            width: 100%;
+            height: 100%;
+            background: white;
+            animation-name: burger-menu-animation;
+            box-shadow: 200px 160px 50px -160px $default-bg;
+            animation-duration: 2s;
+            border-radius: 0 0 10px 0;
+          }
+        }
+
+        &:hover {
+          .list-item-name {
+            color: $primary;
+          }
+          .burger-menu-wrapper {
+            display: block;
+          }
+        }
       }
       .list-item-divider {
         margin: 0 1.875rem;

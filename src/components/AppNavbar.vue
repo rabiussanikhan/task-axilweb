@@ -49,12 +49,13 @@
                     <div class="left-sidebar col-sm-8 col-md-4 col-lg-3"
                          :class="{'position-relative':!leftSidebarCanvasButton}">
                         <template v-if="leftSidebarCanvasButton">
-                            <button type="button"
-                                    :key="`canvas`"
-                                    class="sidebar-btn d-flex justify-content-start"
-                                    data-bs-toggle="offcanvas"
-                                    data-bs-target="#sidebarLeftOffcanvas"
-                                    aria-controls="sidebarLeftOffcanvas">
+                            <button
+                                type="button"
+                                :key="`canvas`"
+                                class="sidebar-btn d-flex justify-content-start"
+                                data-bs-toggle="offcanvas"
+                                data-bs-target="#sidebarLeftOffcanvas"
+                                aria-controls="sidebarLeftOffcanvas">
                                 <i data-feather="menu" :key="`canvas-icon`"></i>
                                 <span class="sidebar-btn-text">Department</span>
                             </button>
@@ -65,8 +66,11 @@
                                 <div class="offcanvas-header">
                                     <h5 class="offcanvas-title" id="sidebarLeftOffcanvasLabel">Backdroped with
                                         scrolling</h5>
-                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                            aria-label="Close"></button>
+                                    <button
+                                        type="button"
+                                        class="btn-close text-reset shadow-none"
+                                        data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
                                 </div>
                                 <div class="offcanvas-body">
                                     <p>Try scrolling the rest of the page to see this option in action.</p>
@@ -84,11 +88,16 @@
                                 <template v-for="(item, index) in leftSidebarData">
                                     <li :key="`list-${index}`"
                                         class="list-group-item d-flex align-items-center justify-content-between">
-                                        <span>{{ item.title }}</span>
-                                        <img class="list-group-img"
+                                        <span class="list-item-name">{{ item.title }}</span>
+                                        <img class="list-item-img"
                                              :src="urlGenerator(item.icon)"
                                              :alt="item.icon"
                                         />
+                                        <div v-if="item.product" class="burger-menu-wrapper">
+                                            <div class="burger-menu">
+
+                                            </div>
+                                        </div>
                                     </li>
                                     <div v-if="index < (leftSidebarData.length - 1)"
                                          class="list-item-divider"
@@ -151,7 +160,8 @@ export default {
             leftSidebarData: [
                 {
                     title: 'Fashion',
-                    icon: 'images/icons/briefcase.png'
+                    icon: 'images/icons/briefcase.png',
+                    product: true
                 },
                 {
                     title: 'Flower Pot',

@@ -1,5 +1,6 @@
 @import "variable";
 @import "mixins";
+@import "animation";
 
 .products-content {
   .header {
@@ -9,7 +10,7 @@
     font-size: 40px;
     line-height: 99.33%;
     letter-spacing: -0.025em;
-    color: #E76458;
+    color: $custom-badge-color;
   }
 
   .header-secondary {
@@ -44,6 +45,120 @@
         background: white;
         color: $primary;
         box-shadow: 0 0 30px #E5E5E5;
+      }
+    }
+  }
+
+  .products-slider-wrapper {
+    .product-item {
+      position: relative;
+      width: 276px;
+      height: 500px;
+
+      .product-img {
+        border-radius: 24px;
+      }
+
+      .product-details {
+
+        animation: product-action-animation;
+        animation-duration: 2s;
+
+        .product-title {
+          font-size: 24px;
+          line-height: 140%;
+          letter-spacing: -0.045em;
+          color: #292930;
+        }
+
+        .product-price {
+          font-size: 20px;
+          line-height: 140%;
+          letter-spacing: -0.045em;
+
+          .old-price {
+            margin-right: 1rem !important;
+            color: $text-grey;
+            text-decoration: line-through;
+          }
+
+          .current-price {
+            color: $dark;
+          }
+        }
+
+        .product-colors {
+          .color {
+            height: 26px;
+            width: 26px;
+            border-radius: 50%;
+            padding: 0;
+            margin: 0 1rem 0 0;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &.active {
+              border: 1px solid #292930;
+            }
+
+            .color-dot {
+              border-radius: 50%;
+              height: 16px;
+              width: 16px;
+            }
+          }
+        }
+      }
+
+      .product-action-btn {
+        display: none;
+
+        animation: product-action-animation;
+        animation-duration: 2s;
+
+        .icon-btn {
+          width: 60px;
+          height: 60px;
+          background: #FFFFFF;
+          border: 1px solid #CBD3D9;
+          box-sizing: border-box;
+          border-radius: 50%;
+          color: $text-grey;
+        }
+
+        .text-btn {
+          height: 60px;
+          @include poppins;
+          background: $primary;
+          border: none;
+          border-radius: 100px;
+          color: white;
+          padding: 0 1.25rem;
+        }
+      }
+
+      .discount-badge {
+        background: $custom-badge-color;
+        height: 40px;
+        border-radius: 24px;
+        position: absolute;
+        top: 1.5rem;
+        right: -2rem;
+        padding: 0.4rem 1rem;
+        border: 2px solid #FFFFFF;
+      }
+
+      &:hover {
+        .product-details {
+          display: none;
+        }
+
+        .product-action-btn {
+          display: block;
+        }
       }
     }
   }

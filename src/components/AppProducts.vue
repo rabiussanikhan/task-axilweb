@@ -7,29 +7,64 @@
                 <button
                     @click.prevent="prevSlide"
                     type="button"
-                    :class="{'disabled': !prev}"
                     class="slider-btn slider-left-btn">
                     <i data-feather="chevron-left"></i>
                 </button>
                 <button
                     @click.prevent="nextSlide"
                     type="button"
-                    :class="{'disabled': !next}"
                     class="slider-btn slider-right-btn">
                     <i data-feather="chevron-right"></i>
                 </button>
             </div>
         </div>
 
-        <div class="products-slider-wrapper min-height-250">
+        <div class="products-slider-wrapper min-height-250 py-5">
             <carousel
                 ref="carousel"
                 :pagination-enabled="false"
-                :per-page-custom="[[575,1],[767,2],[991,3],[1199,4]]">
+                :per-page-custom="[[0,1],[767,2],[991,3],[1199,4]]">
                 <slide v-for="(product, index) in products"
-                       :key="index" class="px-3">
-                    <div class="product-item bg-success height-200">
-                        {{product.title}}
+                       :key="`product-${index}`">
+                    <div class="product-item">
+                        <img class="product-img img-fluid"
+                             :src="urlGenerator(product.img)"
+                             alt="product-img">
+                        <div class="product-details mt-4">
+                            <h5 class="product-title">
+                                {{ product.title }}
+                            </h5>
+                            <div class="product-price d-flex align-items-center mt-3">
+                                <span class="old-price">${{ product.prices.old }}</span>
+                                <span class="current-price">${{ product.prices.current }}</span>
+                            </div>
+                            <div class="product-colors d-flex align-items-center mt-3">
+                                <button
+                                    v-for="(color, colorIndex) in product.color"
+                                    :key="`product-color-${colorIndex}`"
+                                    :class="{'active': color === product.activeColor}"
+                                    @click.prevent="product.activeColor = color"
+                                    class="color">
+                                    <div class="color-dot"
+                                         :style="`background-color: ${color}`">
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-action-btn mt-4">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <button class="icon-btn" type="button">
+                                    <i data-feather="heart"></i>
+                                </button>
+                                <button class="text-btn" type="button">Add to Cart</button>
+                                <button class="icon-btn" type="button">
+                                    <i data-feather="eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <span v-if="product.discount" class="discount-badge text-white">
+                            {{ `${product.discount}% OFF` }}
+                        </span>
                     </div>
                 </slide>
             </carousel>
@@ -39,13 +74,14 @@
 
 <script>
 import {Carousel, Slide} from 'vue-carousel'
-
+import {urlGenerator} from "./helper/helper";
 
 export default {
     name: "AppProducts",
     components: {Carousel, Slide},
     data() {
         return {
+            urlGenerator,
             products: [
                 {
                     title: 'Coffee Table One',
@@ -55,7 +91,8 @@ export default {
                     prices: {
                         current: 20,
                         old: 30
-                    }
+                    },
+                    activeColor: '#906145'
                 },
                 {
                     title: 'Coffee Table Two',
@@ -65,7 +102,8 @@ export default {
                     prices: {
                         current: 20,
                         old: 30
-                    }
+                    },
+                    activeColor: '#FFDC60'
                 },
                 {
                     title: 'Coffee Table Three',
@@ -75,7 +113,8 @@ export default {
                     prices: {
                         current: 20,
                         old: 30
-                    }
+                    },
+                    activeColor: '#906145'
                 },
                 {
                     title: 'Coffee Table Four',
@@ -85,7 +124,8 @@ export default {
                     prices: {
                         current: 20,
                         old: 30
-                    }
+                    },
+                    activeColor: '#906145'
                 },
                 {
                     title: 'Coffee Table Five',
@@ -95,7 +135,8 @@ export default {
                     prices: {
                         current: 20,
                         old: 30
-                    }
+                    },
+                    activeColor: '#906145'
                 }
             ],
         }
@@ -110,12 +151,10 @@ export default {
     },
     computed: {
         next() {
-            return true;
-            // return this.$refs.carousel.canAdvanceForward
+            return this.$refs.carousel.canAdvanceForward
         },
         prev() {
-            return true;
-            // return this.$refs.carousel.canAdvanceBackward
+            return this.$refs.carousel.canAdvanceBackward
         },
     }
 }

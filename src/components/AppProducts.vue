@@ -4,36 +4,48 @@
         <div class="d-flex align-items-center flex-column flex-md-row justify-content-between">
             <h2 class="header-secondary">Explore our Products</h2>
             <div class="slider-btn-group d-flex justify-content-between">
-                <button @click.prevent="starIndex--" type="button" class="slider-btn slider-left-btn">
+                <button
+                    @click.prevent="prevSlide"
+                    type="button"
+                    :class="{'disabled': !prev}"
+                    class="slider-btn slider-left-btn">
                     <i data-feather="chevron-left"></i>
                 </button>
-                <button @click.prevent="starIndex++" type="button" class="slider-btn slider-right-btn">
+                <button
+                    @click.prevent="nextSlide"
+                    type="button"
+                    :class="{'disabled': !next}"
+                    class="slider-btn slider-right-btn">
                     <i data-feather="chevron-right"></i>
                 </button>
             </div>
         </div>
 
-<!--        <div class="products-slider-wrapper min-height-250">
-            <div class="row">
-                <template v-for="(product, index) in products">
-                    <div :key="`product-${index}`"
-                         v-if="(index >= starIndex) && (index <= (starIndex+showableIndex))"
-                         class="col-lg-3">
-                        {{ product.title }}
+        <div class="products-slider-wrapper min-height-250">
+            <carousel
+                ref="carousel"
+                :pagination-enabled="false"
+                :per-page-custom="[[575,1],[767,2],[991,3],[1199,4]]">
+                <slide v-for="(product, index) in products"
+                       :key="index" class="px-3">
+                    <div class="product-item bg-success height-200">
+                        {{product.title}}
                     </div>
-                </template>
-            </div>
-        </div>-->
+                </slide>
+            </carousel>
+        </div>
     </div>
 </template>
 
 <script>
+import {Carousel, Slide} from 'vue-carousel'
+
+
 export default {
     name: "AppProducts",
+    components: {Carousel, Slide},
     data() {
         return {
-            starIndex: 0,
-            showIndex: 3,
             products: [
                 {
                     title: 'Coffee Table One',
@@ -85,8 +97,26 @@ export default {
                         old: 30
                     }
                 }
-            ]
+            ],
         }
+    },
+    methods: {
+        nextSlide() {
+            this.$refs.carousel.goToPage(this.$refs.carousel.getNextPage());
+        },
+        prevSlide() {
+            this.$refs.carousel.goToPage(this.$refs.carousel.getPreviousPage());
+        }
+    },
+    computed: {
+        next() {
+            return true;
+            // return this.$refs.carousel.canAdvanceForward
+        },
+        prev() {
+            return true;
+            // return this.$refs.carousel.canAdvanceBackward
+        },
     }
 }
 </script>

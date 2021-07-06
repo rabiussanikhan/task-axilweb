@@ -22,11 +22,15 @@
       background: $default-bg;
       border-radius: 45px;
       color: $text-grey;
+      overflow: hidden;
 
 
       .search-input {
-        width: calc(100% - 75px);
-        border: 0;
+        width: calc(100% - 60px);
+        border: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden;
         background: $default-bg;
 
         &:focus-visible {
@@ -35,7 +39,7 @@
       }
 
       .search-icon {
-        margin: auto 1.25rem;
+        margin: auto 20px;
         height: 20px;
         width: 20px;
       }
@@ -251,6 +255,7 @@
             text-decoration: none;
             display: block;
             padding: 1rem 1rem 0;
+
             &:hover {
               color: $primary;
             }
@@ -261,6 +266,7 @@
           .nav-with-submenu {
             display: block;
           }
+
           .nav-link-text {
             color: $dark;
             border-bottom: 3px solid $primary;

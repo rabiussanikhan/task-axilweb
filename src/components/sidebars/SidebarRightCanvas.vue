@@ -1,6 +1,6 @@
 <template>
-    <div class="p-4 left-sidebar-canvas overflow-auto">
-        <div class="accordion" id="leftCanvasAccordion">
+    <div class="p-4 right-sidebar-canvas">
+        <div class="accordion" id="rightCanvasAccordion">
             <div v-for="(item, index) in data"
                  :key="index"
                  class="accordion-item">
@@ -14,7 +14,6 @@
                         :aria-expanded="activeIndex === index ? 'true' : 'false'"
                         :aria-controls="`collapse-${index}`">
                         <div class="d-flex align-items-center">
-                            <div class="width-50"><img :src="urlGenerator(item.icon)" alt="not found"></div>
                             <p class="mb-0 mx-1">{{ item.title }}</p>
                         </div>
                     </button>
@@ -23,11 +22,15 @@
                      class="accordion-collapse collapse"
                      :class="{'show': index === activeIndex}"
                      :aria-labelledby="`heading-${index}`"
-                     data-bs-parent="#leftCanvasAccordion">
+                     data-bs-parent="#rightCanvasAccordion">
                     <div class="accordion-body">
-                        <component v-if="index === 0" :is="`side-${item.title.toLowerCase()}`"></component>
-                        <p v-else class="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry. Lorem
+                        <ul v-if="item.subMenu" class="list-unstyled mb-0">
+                            <li v-for="(subItem, subIndex) in item.subMenu"
+                                :class="{'mb-2': subIndex < item.subMenu.length - 1}">
+                                {{subItem}}
+                            </li>
+                        </ul>
+                        <p v-else class="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                             Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                     </div>
                 </div>
@@ -37,15 +40,12 @@
 </template>
 
 <script>
-import {urlGenerator} from "../helper/helper";
-
 export default {
-    name: "SidebarLeftCanvas",
+    name: "SidebarRightCanvas",
     props: ['data'],
     data() {
         return {
-            urlGenerator,
-            activeIndex: 1
+            activeIndex: 3
         }
     }
 }

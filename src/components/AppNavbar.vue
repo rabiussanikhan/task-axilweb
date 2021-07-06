@@ -178,15 +178,7 @@
                              tabindex="-1"
                              id="sidebarRightOffcanvas"
                              aria-labelledby="sidebarRightOffcanvasLabel">
-                            <div class="offcanvas-header">
-                                <h5 class="offcanvas-title" id="sidebarRightOffcanvasLabel">Backdroped with
-                                    scrolling</h5>
-                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                        aria-label="Close"></button>
-                            </div>
-                            <div class="offcanvas-body">
-                                <p>Try scrolling the rest of the page to see this option in action.</p>
-                            </div>
+                            <sidebar-right-canvas :data="rightSidebarData"/>
                         </div>
                     </div>
                 </div>
@@ -287,7 +279,7 @@ export default {
             handler: function (data) {
                 if(!data) {
                     setTimeout(()=> {
-                        $(`.modal-backdrop`).hide();
+                        $(`.modal-backdrop`).removeClass('show');
                     })
                 }
             }

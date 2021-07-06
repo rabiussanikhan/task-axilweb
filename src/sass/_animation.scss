@@ -20,15 +20,11 @@
 
 @keyframes burger-menu-animation {
   from {
-    height: 0;
-    width: 0;
+    left: 0;
     opacity: 0;
-    box-shadow: 200px 160px 50px -160px $text-grey;
   }
   to {
-    height: 100%;
-    width: 100%;
+    left: 100%;
     opacity: 1;
-    box-shadow: 200px 160px 50px -160px $default-bg;
   }
 }

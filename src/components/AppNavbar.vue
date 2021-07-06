@@ -159,12 +159,20 @@
                     </div>
                     <div class="right-sidebar col-sm-4 col-md-8 col-lg-9 d-flex align-items-center justify-content-end">
                         <ul class="nav">
-                            <li v-for="(item, index) in rightSidebarData" :key="index" class="nav-item">
-                                <a class="nav-link active" :class="{'nav-with-submenu': item.subMenu}"
+                            <li v-for="(item, index) in rightSidebarData" :key="index"
+                                class="nav-item">
+                                <a class="nav-link"
                                    aria-current="page" href="#">
                                     <span class="nav-link-text">{{ item.title }}</span>
                                     <i data-feather="chevron-down" v-if="item.subMenu"></i>
                                 </a>
+                                <div v-if="item.subMenu" class="nav-with-submenu">
+                                    <ul class="list-unstyled">
+                                        <li v-for="(subItemName, subIndex) in item.subMenu">
+                                            <a href="#" class="sub-item-link">{{subItemName}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
                         </ul>
                         <button
@@ -265,10 +273,7 @@ export default {
                 {title: 'Women'},
                 {
                     title: 'Kids',
-                    subMenu: [
-                        {title: 'Pant'},
-                        {title: 'Shirt'}
-                    ]
+                    subMenu: ['Shirt', 'Mens Shoe', 'Girls Hijab', 'Royal Panjabi']
                 },
                 {title: 'Sale'},
                 {title: 'Collections'},

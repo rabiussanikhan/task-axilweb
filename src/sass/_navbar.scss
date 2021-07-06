@@ -143,13 +143,13 @@
           animation-duration: $animation-default-duration;
           z-index: 1;
 
-          @media all and (min-width: 992px){
+          @media all and (min-width: 992px) {
             width: 720px;
           }
-          @media all and (min-width: 1200px){
+          @media all and (min-width: 1200px) {
             width: 854px;
           }
-          @media all and (min-width: 1400px){
+          @media all and (min-width: 1400px) {
             width: 990px;
           }
 
@@ -160,8 +160,9 @@
             box-shadow: 200px 160px 50px -160px $default-bg;
             border-radius: 0 0 10px 0;
 
-            .row{
+            .row {
               height: 100%;
+
               .menu-heading {
                 font-size: 20px;
                 color: black;
@@ -174,6 +175,7 @@
               .feature-wrapper {
                 position: relative;
                 height: 100%;
+
                 .divider {
                   position: absolute;
                   height: 100%;
@@ -187,6 +189,7 @@
                   height: 110px !important;
                   margin-top: 1rem;
                 }
+
                 .see-all-btn {
                   @include poppins;
                   line-height: 24px;
@@ -205,11 +208,13 @@
           .list-item-name {
             color: $primary;
           }
+
           .burger-menu-wrapper {
             display: block;
           }
         }
       }
+
       .list-item-divider {
         margin: 0 1.875rem;
         padding: 0;
@@ -224,22 +229,41 @@
       justify-content: end;
 
       .nav-item {
+        position: relative;
+
         .nav-link {
           color: #999FAE;
         }
 
         .nav-with-submenu {
-          .sub-item {
-            display: none;
-          }
+          animation-name: right-sidebar-animation;
+          animation-duration: $animation-default-duration;
+          position: absolute;
+          display: none;
+          top: 100%;
+          min-width: 200px;
+          left: 0;
+          background: $default-bg;
+          padding-bottom: 1rem;
 
-          &:hover {
-            position: relative;
-            color: $dark;
-
-            .nav-link-text {
-              border-bottom: 3px solid $primary;
+          .sub-item-link {
+            color: #999FAE;
+            text-decoration: none;
+            display: block;
+            padding: 1rem 1rem 0;
+            &:hover {
+              color: $primary;
             }
+          }
+        }
+
+        &:hover {
+          .nav-with-submenu {
+            display: block;
+          }
+          .nav-link-text {
+            color: $dark;
+            border-bottom: 3px solid $primary;
           }
         }
       }

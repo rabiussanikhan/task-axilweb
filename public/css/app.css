@@ -23273,7 +23273,7 @@ textarea.form-control-lg {
     display: block;
     width: 92%;
     animation: search-input-animation;
-    animation-duration: 2s;
+    animation-duration: 1s;
   }
   .visible-md-search .input-group-wrapper .search-input-group {
     border: 2px solid #656973;
@@ -23630,7 +23630,7 @@ textarea.form-control-lg {
 }
 .products-content .products-slider-wrapper .product-item .product-details {
   animation: product-action-animation;
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
 .products-content .products-slider-wrapper .product-item .product-details .product-title {
   font-size: 24px;
@@ -23674,7 +23674,7 @@ textarea.form-control-lg {
 .products-content .products-slider-wrapper .product-item .product-action-btn {
   display: none;
   animation: product-action-animation;
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
 .products-content .products-slider-wrapper .product-item .product-action-btn .icon-btn {
   width: 60px;

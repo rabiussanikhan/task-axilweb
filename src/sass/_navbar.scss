@@ -76,7 +76,7 @@
       display: block;
       width: 92%;
       animation: search-input-animation;
-      animation-duration: 2s;
+      animation-duration: $animation-default-duration;
 
       .search-input-group {
         border: 2px solid $text-grey;
@@ -140,7 +140,7 @@
           background: none;
           display: none;
           animation-name: burger-menu-animation;
-          animation-duration: 1s;
+          animation-duration: $animation-default-duration;
           z-index: 1;
 
           @media all and (min-width: 992px){

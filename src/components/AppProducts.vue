@@ -23,7 +23,7 @@
             <carousel
                 ref="carousel"
                 :pagination-enabled="false"
-                :per-page-custom="[[0,1],[767,2],[991,3],[1199,4]]">
+                :per-page-custom="[[0,1],[767,2],[991,3],[1399,4]]">
                 <slide v-for="(product, index) in products"
                        :key="`product-${index}`">
                     <div class="product-item">

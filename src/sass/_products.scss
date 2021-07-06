@@ -62,7 +62,7 @@
       .product-details {
 
         animation: product-action-animation;
-        animation-duration: 2s;
+        animation-duration: $animation-default-duration;
 
         .product-title {
           font-size: 24px;
@@ -117,7 +117,7 @@
         display: none;
 
         animation: product-action-animation;
-        animation-duration: 2s;
+        animation-duration: $animation-default-duration;
 
         .icon-btn {
           width: 60px;

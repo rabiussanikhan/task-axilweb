@@ -48,8 +48,8 @@
             <div class="container">
                 <div class="row">
                     <div class="left-sidebar col-sm-8 col-md-4 col-lg-3"
-                         :class="{'position-relative':!leftSidebarCanvasButton}">
-                        <template v-if="leftSidebarCanvasButton">
+                         :class="{'position-relative':!sidebarCanvasButton}">
+                        <template v-if="sidebarCanvasButton">
                             <button
                                 type="button"
                                 :key="`canvas`"
@@ -61,6 +61,7 @@
                                 <span class="sidebar-btn-text">Department</span>
                             </button>
                             <div class="offcanvas offcanvas-start"
+                                 data-bs-scroll="true"
                                  tabindex="-1"
                                  id="sidebarLeftOffcanvas"
                                  aria-labelledby="sidebarLeftOffcanvasLabel">
@@ -166,20 +167,23 @@
                                 </div>
                             </li>
                         </ul>
-                        <button
-                            class="sidebar-btn"
-                            type="button"
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#sidebarRightOffcanvas"
-                            aria-controls="sidebarRightOffcanvas">
-                            <i data-feather="menu"></i>
-                        </button>
-                        <div class="offcanvas offcanvas-end"
-                             tabindex="-1"
-                             id="sidebarRightOffcanvas"
-                             aria-labelledby="sidebarRightOffcanvasLabel">
-                            <sidebar-right-canvas :data="rightSidebarData"/>
-                        </div>
+                        <template v-if="sidebarCanvasButton">
+                            <button
+                                class="sidebar-btn"
+                                type="button"
+                                data-bs-toggle="offcanvas"
+                                data-bs-target="#sidebarRightOffcanvas"
+                                aria-controls="sidebarRightOffcanvas">
+                                <i data-feather="menu"></i>
+                            </button>
+                            <div class="offcanvas offcanvas-end"
+                                 data-bs-scroll="true"
+                                 tabindex="-1"
+                                 id="sidebarRightOffcanvas"
+                                 aria-labelledby="sidebarRightOffcanvasLabel">
+                                <sidebar-right-canvas :data="rightSidebarData"/>
+                            </div>
+                        </template>
                     </div>
                 </div>
             </div>
@@ -198,7 +202,7 @@ export default {
             showSearch: false,
             windowWidth: 0,
 
-            leftSidebarCanvasButton: false,
+            sidebarCanvasButton: false,
             leftSidebarData: [
                 {
                     title: 'Fashion',
@@ -272,15 +276,15 @@ export default {
     watch: {
         windowWidth: {
             handler: function (width) {
-                this.leftSidebarCanvasButton = width < 992
+                this.sidebarCanvasButton = width < 992
             }
         },
-        leftSidebarCanvasButton: {
+        sidebarCanvasButton: {
             handler: function (data) {
                 if(!data) {
                     setTimeout(()=> {
-                        $(`.modal-backdrop`).removeClass('show');
-                    })
+                        $('.bottom-navbar .modal-backdrop').remove();
+                    });
                 }
             }
         }

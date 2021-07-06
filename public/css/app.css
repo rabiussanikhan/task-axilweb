@@ -23681,6 +23681,10 @@ textarea.form-control-lg {
   color: #5956E9;
   box-shadow: 0 0 30px #E5E5E5;
 }
+.products-content .products-slider-wrapper .VueCarousel-slide {
+  display: flex;
+  justify-content: center;
+}
 .products-content .products-slider-wrapper .product-item {
   position: relative;
   width: 276px;

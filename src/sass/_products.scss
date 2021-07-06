@@ -50,6 +50,10 @@
   }
 
   .products-slider-wrapper {
+    .VueCarousel-slide {
+      display: flex;
+      justify-content: center;
+    }
     .product-item {
       position: relative;
       width: 276px;

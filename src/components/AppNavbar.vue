@@ -24,10 +24,11 @@
                     <button type="button" class="action-btn">
                         <i data-feather="heart"></i>
                     </button>
-                    <button type="button" class="action-btn"
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#cartOffcanvas"
-                            aria-controls="cartOffcanvas">
+                    <button
+                        type="button" class="action-btn"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#cartOffcanvas"
+                        aria-controls="cartOffcanvas">
                         <i data-feather="shopping-cart"></i>
                     </button>
                     <button type="button" class="action-btn">
@@ -63,18 +64,7 @@
                                  tabindex="-1"
                                  id="sidebarLeftOffcanvas"
                                  aria-labelledby="sidebarLeftOffcanvasLabel">
-                                <div class="offcanvas-header">
-                                    <h5 class="offcanvas-title" id="sidebarLeftOffcanvasLabel">Backdroped with
-                                        scrolling</h5>
-                                    <button
-                                        type="button"
-                                        class="btn-close text-reset shadow-none"
-                                        data-bs-dismiss="offcanvas"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="offcanvas-body">
-                                    <p>Try scrolling the rest of the page to see this option in action.</p>
-                                </div>
+                                <sidebar-left-canvas :data="leftSidebarData"/>
                             </div>
                         </template>
                         <template v-else>
@@ -133,7 +123,8 @@
                                                                  :src="urlGenerator(`images/burger-menu/item-2.png`)"
                                                                  alt="Not Found"/>
                                                         </div>
-                                                        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-xxl-between">
+                                                        <div
+                                                            class="d-flex flex-wrap align-items-center justify-content-center justify-content-xxl-between">
                                                             <img class="feature-img img-fluid"
                                                                  :src="urlGenerator(`images/burger-menu/item-3.png`)"
                                                                  alt="Not Found"/>
@@ -169,7 +160,7 @@
                                 <div v-if="item.subMenu" class="nav-with-submenu">
                                     <ul class="list-unstyled">
                                         <li v-for="(subItemName, subIndex) in item.subMenu">
-                                            <a href="#" class="sub-item-link">{{subItemName}}</a>
+                                            <a href="#" class="sub-item-link">{{ subItemName }}</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -290,6 +281,15 @@ export default {
         windowWidth: {
             handler: function (width) {
                 this.leftSidebarCanvasButton = width < 992
+            }
+        },
+        leftSidebarCanvasButton: {
+            handler: function (data) {
+                if(!data) {
+                    setTimeout(()=> {
+                        $(`.modal-backdrop`).hide();
+                    })
+                }
             }
         }
     }

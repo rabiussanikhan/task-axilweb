@@ -18,7 +18,8 @@
                     </div>
                 </div>
                 <div class="navbar-right-buttons d-flex justify-content-center justify-content-between">
-                    <button type="button" class="action-btn d-md-none" @click.prevent="showSearch =!showSearch">
+                    <button type="button" class="action-btn d-md-none"
+                            @click.prevent="showSearch =!showSearch">
                         <i data-feather="search"></i>
                     </button>
                     <button type="button" class="action-btn">

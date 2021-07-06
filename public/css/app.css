@@ -23776,9 +23776,21 @@ textarea.form-control-lg {
 .main-cart .cart-body .cart-item {
   color: black !important;
 }
-.main-cart .cart-body .cart-item .cart-item-img {
+.main-cart .cart-body .cart-item .cart-item-img-wrapper {
+  position: relative;
+}
+.main-cart .cart-body .cart-item .cart-item-img-wrapper .cart-item-img {
   background: #F6F7FB;
   border-radius: 10px;
+}
+.main-cart .cart-body .cart-item .cart-item-img-wrapper .cart-menu-mini-btn {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  display: none;
+}
+.main-cart .cart-body .cart-item .cart-item-img-wrapper:hover .cart-menu-mini-btn {
+  display: block;
 }
 .main-cart .cart-body .cart-item .cart-menu-mini-btn {
   height: 26px;

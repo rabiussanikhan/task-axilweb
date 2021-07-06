@@ -13,9 +13,23 @@
     .cart-item {
       color: black !important;
 
-      .cart-item-img {
-        background: $default-bg;
-        border-radius: 10px;
+      .cart-item-img-wrapper {
+        position: relative;
+        .cart-item-img {
+          background: $default-bg;
+          border-radius: 10px;
+        }
+        .cart-menu-mini-btn {
+          position: absolute;
+          top: -10px;
+          left: -10px;
+          display: none;
+        }
+        &:hover {
+          .cart-menu-mini-btn {
+            display: block;
+          }
+        }
       }
 
       .cart-menu-mini-btn {

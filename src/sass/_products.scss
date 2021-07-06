@@ -19,7 +19,7 @@
     font-size: 48px;
     line-height: 100%;
     letter-spacing: -0.045em;
-    color: #292930;
+    color: $text-dark;
   }
 
   .slider-btn-group {
@@ -68,7 +68,7 @@
           font-size: 24px;
           line-height: 140%;
           letter-spacing: -0.045em;
-          color: #292930;
+          color: $text-dark;
         }
 
         .product-price {
@@ -101,7 +101,7 @@
             align-items: center;
 
             &.active {
-              border: 1px solid #292930;
+              border: 1px solid $text-dark;
             }
 
             .color-dot {
@@ -123,7 +123,7 @@
           width: 60px;
           height: 60px;
           background: #FFFFFF;
-          border: 1px solid #CBD3D9;
+          border: 1px solid $light-grey;
           box-sizing: border-box;
           border-radius: 50%;
           color: $text-grey;

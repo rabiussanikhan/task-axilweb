@@ -23234,6 +23234,13 @@ textarea.form-control-lg {
     top: 100%;
   }
 }
+.top-navbar {
+  background: #292930;
+}
+.top-navbar .small {
+  color: #CBD3D9;
+}
+
 .middle-navbar .app-logo {
   width: 115px;
 }

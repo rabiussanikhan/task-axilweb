@@ -1,8 +1,8 @@
 <template>
     <header>
-        <div class="top-navbar bg-dark d-flex align-items-center justify-content-center py-2">
-            <p class="mx-2 mb-0 text-white">CHRISTMAS SALE - 25% OFF</p>
-            <small class="mb-0 small text-white-50">added at the checkout</small>
+        <div class="top-navbar d-flex align-items-center justify-content-center py-2">
+            <p class="mx-2 mb-0 font-size-14 text-white">CHRISTMAS SALE - 25% OFF</p>
+            <small class="mb-0 small">added at the checkout</small>
         </div>
         <div class="container middle-navbar" :class="{'visible-md-search':showSearch}">
             <nav class="min-height-100 d-flex align-items-center justify-content-between">

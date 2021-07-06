@@ -1,8 +1,17 @@
 @import "variable";
 @import "mixins";
 @import "animation";
-// Middle Navbar
 
+// Top Navbar
+.top-navbar {
+  background: $text-dark;
+
+  .small {
+    color: $light-grey;
+  }
+}
+
+// Middle Navbar
 .middle-navbar {
   // logo
   .app-logo {
@@ -222,7 +231,7 @@
       .list-item-divider {
         margin: 0 1.875rem;
         padding: 0;
-        background: #CBD3D9;
+        background: $light-grey;
         height: 1px;
       }
     }

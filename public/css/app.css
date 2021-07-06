@@ -23595,4 +23595,47 @@ textarea.form-control-lg {
   display: block;
 }
 
+#cartOffcanvas {
+  width: 600px;
+}
+
+.main-cart .cart-body {
+  height: calc(100vh - 350px);
+  overflow-y: auto;
+}
+.main-cart .cart-body .cart-item {
+  color: black !important;
+}
+.main-cart .cart-body .cart-item .cart-item-img {
+  background: #F6F7FB;
+  border-radius: 10px;
+}
+.main-cart .cart-body .cart-item .cart-menu-mini-btn {
+  height: 26px;
+  width: 26px;
+  margin: 0;
+  padding: 0;
+  background: #F6F7FB;
+  border-radius: 50%;
+  border: none;
+}
+.main-cart .cart-body .cart-item .item-price {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 20px;
+  font-weight: 600;
+}
+.main-cart .sub-total {
+  color: black;
+}
+.main-cart .sub-total .total-label {
+  font-size: 24px;
+}
+.main-cart .sub-total .total-price {
+  font-size: 24px;
+  font-weight: 700;
+}
+.main-cart .sub-total .cart-action-btn .btn {
+  border-radius: 100px;
+}
+
 /*# sourceMappingURL=app.css.map */

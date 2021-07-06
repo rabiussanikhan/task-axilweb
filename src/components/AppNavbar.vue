@@ -24,12 +24,21 @@
                     <button type="button" class="action-btn">
                         <i data-feather="heart"></i>
                     </button>
-                    <button type="button" class="action-btn">
+                    <button type="button" class="action-btn"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#cartOffcanvas"
+                            aria-controls="cartOffcanvas">
                         <i data-feather="shopping-cart"></i>
                     </button>
                     <button type="button" class="action-btn">
                         <i data-feather="user-minus"></i>
                     </button>
+                    <div class="offcanvas offcanvas-end"
+                         tabindex="-1"
+                         id="cartOffcanvas"
+                         aria-labelledby="cartOffcanvasLabel">
+                        <app-product-cart/>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -50,7 +59,7 @@
                                 <span class="sidebar-btn-text">Department</span>
                             </button>
                             <div class="offcanvas offcanvas-start"
-                                 data-bs-scroll="true" tabindex="-1"
+                                 tabindex="-1"
                                  id="sidebarLeftOffcanvas"
                                  aria-labelledby="sidebarLeftOffcanvasLabel">
                                 <div class="offcanvas-header">
@@ -82,8 +91,8 @@
                                         />
                                     </li>
                                     <div v-if="index < (leftSidebarData.length - 1)"
-                                        class="list-item-divider"
-                                        :key="`hr-${index}`"></div>
+                                         class="list-item-divider"
+                                         :key="`hr-${index}`"></div>
                                 </template>
                             </ul>
                         </template>
@@ -107,7 +116,7 @@
                             <i data-feather="menu"></i>
                         </button>
                         <div class="offcanvas offcanvas-end"
-                             data-bs-scroll="true" tabindex="-1"
+                             tabindex="-1"
                              id="sidebarRightOffcanvas"
                              aria-labelledby="sidebarRightOffcanvasLabel">
                             <div class="offcanvas-header">

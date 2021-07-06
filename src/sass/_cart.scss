@@ -1,0 +1,58 @@
+@import "variable";
+@import "mixins";
+
+#cartOffcanvas {
+  width: 600px;
+}
+
+.main-cart {
+  .cart-body {
+    height: calc(100vh - 350px);
+    overflow-y: auto;
+
+    .cart-item {
+      color: black !important;
+
+      .cart-item-img {
+        background: $default-bg;
+        border-radius: 10px;
+      }
+
+      .cart-menu-mini-btn {
+        height: 26px;
+        width: 26px;
+        margin: 0;
+        padding: 0;
+        background: $default-bg;
+        border-radius: 50%;
+        border: none;
+      }
+
+      .item-price {
+        @include poppins;
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .sub-total {
+    color: black;
+
+    .total-label {
+      font-size: 24px;
+    }
+
+    .total-price {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .cart-action-btn {
+      .btn {
+        border-radius: 100px;
+      }
+    }
+  }
+}
+
